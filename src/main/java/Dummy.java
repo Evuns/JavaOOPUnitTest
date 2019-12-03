@@ -1,4 +1,4 @@
-public class Dummy {
+public class Dummy implements Target{
 
     private int health;
     private int experience;
@@ -12,7 +12,7 @@ public class Dummy {
         return this.health;
     }
 
-    void takeAttack(int attackPoints) {
+    public void takeAttack(int attackPoints) {
         if (this.isDead()) {
             throw new IllegalStateException("Dummy is dead.");
         }
@@ -20,7 +20,7 @@ public class Dummy {
         this.health -= attackPoints;
     }
 
-    int giveExperience() {
+    public int giveExperience() {
         if (!this.isDead()) {
             throw new IllegalStateException("Target is not dead.");
         }
@@ -28,7 +28,7 @@ public class Dummy {
         return this.experience;
     }
 
-    boolean isDead() {
+    public boolean isDead() {
         return this.health <= 0;
     }
 }

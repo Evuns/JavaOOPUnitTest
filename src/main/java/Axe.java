@@ -1,9 +1,9 @@
-public class Axe {
+public class Axe implements Weapon{
 
     private int attackPoints;
     private int durabilityPoints;
 
-    Axe(int attack, int durability) {
+    public Axe(int attack, int durability) {
         this.attackPoints = attack;
         this.durabilityPoints = durability;
     }
@@ -16,7 +16,7 @@ public class Axe {
         return this.durabilityPoints;
     }
 
-    void attack(Dummy target) {
+    public void attack(Target target) {
         if (this.durabilityPoints <= 0) {
             throw new IllegalStateException("Axe is broken.");
         }

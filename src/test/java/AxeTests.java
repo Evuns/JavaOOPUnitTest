@@ -4,18 +4,13 @@ import org.junit.Test;
 
 public class AxeTests {
 
-    private static final int AXE_ATTACK_POINT = 10;
-    private static final int AXE_DURABILITY = 1;
-    private static final int DUMMY_HEALTH = 10;
-    private static final int DUMMY_EXPERIENCE = 10;
-
     private Axe axe;
     private Dummy dummy;
 
     @Before
     public void buildNeededObjects(){
-        this.axe = new Axe(AXE_ATTACK_POINT,AXE_DURABILITY);
-        this.dummy = new Dummy(DUMMY_HEALTH, DUMMY_EXPERIENCE);
+        this.axe = new Axe(constants.WEAPON_ATTACK_POINT, constants.WEAPON_DURABILITY);
+        this.dummy = new Dummy(constants.TARGET_HEALTH, constants.TARGET_EXPERIENCE);
     }
 
     @Test
